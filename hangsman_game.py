@@ -49,6 +49,7 @@ def main():
                     is_running = False
                 else:
                     wrong_guesses+=1
+                    guesses.append(guess)
                     print("Wrong word guess")
                     print("***************\n")
 
@@ -57,11 +58,12 @@ def main():
                     print()
                     print("***************")
 
-                for i in word:
-                    if i in guesses:
-                        print(i,end=" ")
-                    else:
-                        print("__",end=" ")
+                if is_running:
+                    for i in word:
+                        if i in guesses:
+                            print(i,end=" ")
+                        else:
+                            print("__",end=" ")
             
             elif guess in word:
                 print(f"You made a correct guess: {guess}")
